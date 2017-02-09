@@ -1,0 +1,299 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title></title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="../Font-Awesome-master/css/font-awesome.min.css">
+<style type="text/css">
+/*.demo{width:600px; margin:60px auto 10px auto; font-size:16px}
+.table {border-collapse: collapse !important;width: 100%;max-width: 100%;margin-bottom: 20px;}
+.table td,.table th {background-color: #fff !important;}
+.table-bordered th,.table-bordered td {border: 1px solid #ddd !important;}
+.table tr td {padding: 8px;line-height: 1.42857143;vertical-align: middle;border-bottom: 1px solid #ddd;}
+.table tr:hover {background-color: #f5f5f5;}*/
+</style>
+
+<style>
+	body{
+		line-height: 1.5;
+	}
+	#main{
+		width: 600px;
+		margin: 30px auto;
+
+	}
+	#main div{
+
+		margin: 5px 0;
+
+		
+	}
+	.level-first{
+		background: #a1e7d6;
+		color: #000;
+	}
+	h1{
+		font-size: 16px;
+
+	}
+	h2{
+		font-size: 14px;
+	}
+	h3{
+		font-size: 12px;
+		height:30px;
+		line-height:30px;
+		margin: 5px 0;
+		background: #a94442;
+	}
+
+	.level-second{
+		text-indent: 2em;
+		background: #aa1100;
+	}
+	.level-third{
+		text-indent: 4em;
+
+	}
+	span.trangle{
+		margin-right: 5px;
+	}
+</style>
+<script type="text/javascript" src="../jquery.min.js"></script>
+
+</head>
+
+<body>
+<div id="main">
+	<div class="level-first">
+		<h1>
+			<span class="fa fa-caret-down trangle"></span>
+				河北
+			<span class="fa fa-arrow-up"></span>
+			<span class="fa fa-arrow-down"></span>
+		</h1>
+		<div class="level-second">
+			<h2>
+				<span class="fa fa-caret-down trangle"></span>
+					保定
+				<span class="fa fa-arrow-up"></span>
+				<span class="fa fa-arrow-down"></span>
+			</h2>
+			<div class="level-third">
+				<h3>
+						涿州
+					<span class="fa fa-arrow-up"></span>
+					<span class="fa fa-arrow-down"></span>
+				</h3>
+				<h3>
+						白洋淀
+					<span class="fa fa-arrow-up"></span>
+					<span class="fa fa-arrow-down"></span>
+				</h3>
+				<h3>
+					高碑店
+					<span class="fa fa-arrow-up"></span>
+					<span class="fa fa-arrow-down"></span>
+				</h3>
+			</div>
+		</div>
+		<div class="level-second">
+			<h2>
+				<span class="fa fa-caret-down trangle"></span>
+					石家庄
+				<span class="fa fa-arrow-up"></span>
+				<span class="fa fa-arrow-down"></span>
+			</h2>
+			<div class="level-third">
+				<h3>
+						正定
+					<span class="fa fa-arrow-up"></span>
+					<span class="fa fa-arrow-down"></span>
+				</h3>
+				<h3>
+						新乐
+					<span class="fa fa-arrow-up"></span>
+					<span class="fa fa-arrow-down"></span>
+				</h3>
+			</div>
+		</div>
+	</div>
+	<div class="level-first">
+		<h1>
+			<span class="fa fa-caret-down trangle"></span>
+				河南
+			<span class="fa fa-arrow-up"></span>
+			<span class="fa fa-arrow-down"></span>
+		</h1>
+		<div class="level-second">
+			<h2>
+				<span class="fa fa-caret-down"></span>
+					郑州市
+				<span class="fa fa-arrow-up"></span>
+				<span class="fa fa-arrow-down"></span>
+			</h2>
+			<div class="level-third">
+				<h3>
+						开封
+					<span class="fa fa-arrow-up"></span>
+					<span class="fa fa-arrow-down"></span>
+				</h3>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="main2">
+
+	<div class="demo">
+		<table class="table">
+			<tr>
+				<td>HTML5获取地理位置定位信息</td>
+				<td>2015-04-25</td>
+				<td><a href="#" class="up">上移</a> <a href="#" class="down">下移</a> <a href="#" class="top">置顶</a></td>
+			</tr>
+			<tr>
+				<td>CSS+Cookie实现的固定页脚广告条</td>
+				<td>2015-04-18</td>
+				<td><a href="#" class="up">上移</a> <a href="#" class="down">下移</a> <a href="#" class="top">置顶</a></td>
+			</tr>
+			<tr>
+				<td>纯CSS3制作漂亮的价格表</td>
+				<td>2015-04-10</td>
+				<td><a href="#" class="up">上移</a> <a href="#" class="down">下移</a> <a href="#" class="top">置顶</a></td>
+			</tr>
+			<tr>
+				<td>jQuery实现的测试答题功能</td>
+				<td>2015-03-29</td>
+				<td><a href="#" class="up">上移</a> <a href="#" class="down">下移</a> <a href="#" class="top">置顶</a></td>
+			</tr>
+		</table>
+	</div>
+	
+	
+</div>
+
+<script>
+	$(function(){
+		const Module = {
+            $trangle : $(".trangle"),
+				$up : $(".fa-arrow-up"),
+				$down : $(".fa-arrow-down"),
+			clickFunc : function(){
+                this.$trangle.click(function(){
+
+                    $(this).attr("class") == "fa fa-caret-down trangle" ?
+						($(this).attr("class", "fa fa-caret-up trangle"),
+							$(this).parent().siblings().slideUp()):
+						($(this).attr("class", "fa fa-caret-down trangle"),
+                    $(this).parent().siblings().slideDown());
+				});
+                this.$up.click(function(){
+
+                   var $firstIndex = $(this).parents(".level-first");
+                   var $secondIndex = $(this).parents(".level-second");
+                   var $thirdIndex = $(this).parent();
+                    	//alert($firstIndex.index())
+					if($(this).parent().parent().attr("class") == "level-first"){
+                        if($firstIndex.index() != 0){
+                            $firstIndex.prev().before($firstIndex);
+                        }else{
+                            alert("到顶啦");
+                        }
+					}else if($(this).parent().parent().attr("class") == "level-second") {
+                        if ($secondIndex.index() != 1) {
+                            $secondIndex.prev().before($secondIndex);
+                        } else {
+                            alert("到顶啦");
+                        }
+                    }else if($(this).parent().parent().attr("class") == "level-third") {
+                        if ($thirdIndex.index() != 0) {
+                            $thirdIndex.prev().before($thirdIndex);
+                        } else {
+                            alert("到顶啦");
+                        }
+                    }
+
+                });
+                this.$down.click(function(){
+
+                    var $firstIndex = $(this).parents(".level-first");
+                    var $secondIndex = $(this).parents(".level-second");
+                    var $thirdIndex = $(this).parent();
+                    var h1len = $("#main").find(".level-first").length;
+                    var h2len = $(this).parents(".level-first").find(".level-second").length;
+
+
+                    var h3len = $(this).parents(".level-third").find("h3").length;
+
+                    if($(this).parent().parent().attr("class") == "level-first"){
+                        if($firstIndex.index() != h1len - 1){
+                            $firstIndex.next().after($firstIndex);
+                        }else{
+                            alert("到头啦");
+                        }
+                    }else if($(this).parent().parent().attr("class") == "level-second") {
+                        if ($secondIndex.index() != h2len ) {
+                            $secondIndex.next().after($secondIndex);
+                        }else{
+
+                            alert("到头啦");
+                        }
+                    }else if($(this).parent().parent().attr("class") == "level-third") {
+                        if ($thirdIndex.index() != h3len - 1) {
+                            $thirdIndex.next().after($thirdIndex);
+                        } else {
+                            alert("到顶啦");
+                        }
+                    }
+
+                });
+			}
+
+		}
+		Module.clickFunc();
+
+
+
+	});
+    $(function(){
+        //上移
+        var $up = $(".up")
+        $up.click(function() {
+            var $tr = $(this).parents("tr");
+            alert($tr.index())
+            if ($tr.index() != 0) {
+                $tr.fadeOut().fadeIn();
+                $tr.prev().before($tr);
+
+            }else{
+                alert("到头了")
+            }
+        });
+        //下移
+        var $down = $(".down");
+        var len = $down.length;
+        $down.click(function() {
+            var $tr = $(this).parents("tr");
+            if ($tr.index() != len - 1) {
+                $tr.fadeOut().fadeIn();
+                $tr.next().after($tr);
+            }else{
+                alert("到头了")
+            }
+        });
+        //置顶
+        var $top = $(".top");
+        $top.click(function(){
+            var $tr = $(this).parents("tr");
+            $tr.fadeOut().fadeIn();
+            $(".table").prepend($tr);
+            $tr.css("color","#f60");
+        });
+    });
+</script>
+</body>
+</html>
